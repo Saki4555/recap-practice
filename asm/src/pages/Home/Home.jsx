@@ -1,9 +1,10 @@
+import Services from "./Services";
 
 
 const Home = () => {
     return (
         <div>
-            home
+           <Services></Services>
         </div>
     );
 };

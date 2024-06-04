@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-
+import profile from '../../assets/profile.png';
 const Navbar = () => {
   const { user, LogOut } = useAuth();
 
@@ -20,7 +20,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-gray-200">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -41,15 +41,15 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm space-y-1 dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {navOptions}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link to='/' className="btn btn-ghost text-xl">ASM</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navOptions}</ul>
+        <ul className="menu menu-horizontal px-1 space-x-1">{navOptions}</ul>
       </div>
       <div className="navbar-end">
         {user?.email ? (
@@ -61,8 +61,9 @@ const Navbar = () => {
             >
               <div className="w-10 rounded-full">
                 <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  alt="profile"
+                  src={profile}
+                  // src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
                 />
               </div>
             </div>
@@ -71,11 +72,9 @@ const Navbar = () => {
               className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
             >
               <li>
-                <a className="justify-between">Profile</a>
+                <Link to='/profile' className="justify-between">Profile</Link>
               </li>
-              <li>
-                <a>Settings</a>
-              </li>
+             
               <li>
                 <a onClick={handleLogOut}>Logout</a>
               </li>

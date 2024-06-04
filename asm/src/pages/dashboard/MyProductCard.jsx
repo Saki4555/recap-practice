@@ -16,9 +16,9 @@ const MyProductCard = ({ product, setWhatToShow }) => {
   return (
     <div className="flex bg-gray-300 shadow-2xl border border-gray-400 gap-10 p-2 pr-6 h-20 w-[500px]">
       <img src={backpack} alt="" />
-      <div className="text-sm font-semibold">
-        <p>{product?.productName}</p>
-        <p>$ {product?.price}</p>
+      <div className="text-sm tracking-widest font-semibold">
+        <p>Name: {product?.productName}</p>
+        <p>Price: ${product?.price}</p>
         <p>Brand: {product?.brand}</p>
       </div>
 
